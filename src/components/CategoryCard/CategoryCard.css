@@ -1,0 +1,40 @@
+.offers-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.offer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 150px; 
+  height: 70px; 
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px; 
+  height: 70px; 
+  padding: 1px;
+  border-radius: 8px; 
+  background-color: #ffeded; 
+  text-align: center;
+  margin-top: 20px;
+}
+
+.category-image {
+  width: 80px; 
+  height: 70px; 
+  object-fit: cover; 
+  margin-bottom: 0px;
+}
+
+.category-text {
+  font-size: 0.8rem; 
+  color: #000; 
+}

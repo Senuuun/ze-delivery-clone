@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import PasswordPage from './pages/PasswordPage/PasswordPage'; 
+import ProductsPage from './pages/ProductsPage/ProductsPage'; 
 
-function App() {
+const App = () => {
+  const location = useLocation();
+  const showHeader = location.pathname === '/';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {showHeader && <Header />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Login />} /> {}
+        <Route path="/password" element={<PasswordPage />} />
+        <Route path="/produtos/:produtoNome?" element={<ProductsPage />} /> {}
+      </Routes>
     </div>
   );
-}
+};
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
