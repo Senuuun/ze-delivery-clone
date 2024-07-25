@@ -26,8 +26,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Login />} /> {/* Adiciona a rota para /signin */}
         <Route path="/password" element={<PasswordPage />} />
-        <Route path="/produtos/:produtoNome?" element={<ProductsPage />} />
+        <Route path="/produtos/:produtoNome?" element={<ProductsPage />} /> {}
       </Routes>
     </div>
   );
